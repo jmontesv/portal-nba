@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 /* Global*/
 :root {
     --blue: #505cde;
@@ -16,6 +17,14 @@ body {
     font-size: 1.150rem;
     background-color: var(--gray);
 }
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--gray);
+}
 .contenido {
     max-width: 1280px;
     width: 100%;
@@ -25,20 +34,12 @@ body {
 h1 {
     font-size: 2.5rem;
 }
-ul {
-    list-style-type: none;
-}
-a {
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
 header {
     margin: 0 auto;
     text-align: center;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
 }
 .title {
@@ -81,41 +82,77 @@ header {
     width: 5px;
 }
 .menu-principal ul a {
+    font-size: 1.2em;
     transition: .6s;
     color: var(--gray);
 }
 .menu-principal ul li:hover > a {
     color: var(--blue);
 }
-.contenido .banner {
-    height: 500px;
-    background-image: url('./img/banner_jordan.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    filter: brightness(9%);
+.sesion {
+    display: flex;
+    align-items: center;
+    margin-left: 4rem;
 }
-.banner h4 {
-    color: var(--orange);
+.sesion a{
+    font-weight: bold;
+    color: var(--orange); 
+    padding: .1rem 1.5rem;
+    border: 1px solid var(--orange);
+    transition: .4s;
+    letter-spacing: 1px;
+}
+.sesion a:hover {
+    background-color: var(--orange);
+    color: white;
+}
+.sesion a:nth-child(1) {
+    margin-right: 8px;
+}
+.sesion a::after {
+    content: '';
+    background-color: var(--orange);
+    width: 0px;
+    height: 0px;
+    border-radius: 5px;
+    transition: .6s;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.sesion a:hover::after {
+    height: 5px;
+    width: 5px;
+}
+.contenido .banner {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.62) 62%, rgba(247,165,72,1) 100%);
+}
+.banner .descripcion-sitio {
+    width: 40%;
+    margin: auto -30px auto 0;
+    text-align: center;
+}
+.banner h1 {
+    color: var(--gray);
 }
 .banner p {
     font-size: 1.4em;
-    color: #fff;
-    word-spacing: 40px;
-    animation: cambio-color 4s infinite;
+    font-family: 'Yellowtail', cursive;
 }
-.frase {
-    width: 25%;
-    position: absolute;
-    right: 5em;
-    top: 2em;
-}
-.palabra-grande {
-    font-size: 2.5em;
-    letter-spacing: 10px;  
+.banner .imagen {
+    width: max-content;
 }
 main {
+    padding: 1rem 0; 
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 .contenedor-articulos {
@@ -126,7 +163,7 @@ article {
     position: relative;
     width: 100%;
     margin-top: 1em;
-     overflow: hidden;
+    overflow: hidden;
 }
 article .cuerpo {
     width: 100%;
@@ -152,7 +189,15 @@ article p {
     color: #ffffff;
 }
 aside {
+    border: 1px solid yellow;
     width: 20%;
+}
+footer {
+    background-color: var(--orange);
+    height: 20vh;
+}
+footer h5 {
+    margin: auto;
 }
 
 @media (max-width: 855px) {
