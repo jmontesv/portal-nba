@@ -5,13 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <title>NBA</title>
 </head>
 <body>
+    <div class="bg-modal">
+        <div class="boton-cerrar">
+            <i class="large material-icons">close</i>
+        </div>
+        <nav class="menu-movil">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Clasificación</a></li>
+                <li><a href="#">Equipos</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
     <div class="contenido">
         <header>
-            <h1 class="title"><span>NBA</span>INFO</h1>
+            <div class="logo">
+                <h1 class="title">
+                    <span>NBA</span>INFO
+                </h1>
+                <div class="sesion-movil">
+                    <a href="#">
+                        <i class="material-icons">person_add</i>
+                        Registrarse
+                    </a>
+                    <a href="#"><i class="material-icons">person_outline</i>
+                        Iniciar sesión
+                    </a>
+                </div>            
+                <i id="toggle-show-menu" class="material-icons">menu</i>
+            </div>
             <nav class="menu-principal">
                 <ul>
                     <li><a href="#">Inicio</a></li>
@@ -21,7 +50,7 @@
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav> 
-            <div class="sesion">
+            <div class="sesion sesion-normal">
                 <a href="#">Registrarse</a>
                 <a href="#">Iniciar sesión</a>
             </div>
@@ -71,17 +100,30 @@
                 </article>
            </div> 
            <aside>
-              <h1>
-                  Próximos partidos
-              </h1>
-              <div class="cuerpo">
-                
-              </div>
+               <div>
+                   <h1>
+                       Próximos partidos
+                   </h1>
+                   <div class="cuerpo">
+                     
+                   </div>
+               </div>
            </aside> 
         </main>
         <footer>
             <h5>Desarrollador por Javier Montes</h5>
         </footer>
     </div>
+    <script defer>
+        const toggleMenuMovil = document.querySelector('#toggle-show-menu');
+        const modal = document.querySelector('.bg-modal');
+        const botonCerrarMenuMovil = document.querySelector('.boton-cerrar i');
+        toggleMenuMovil.addEventListener('click', (e) => {
+            modal.style.display = 'block';
+        });
+        botonCerrarMenuMovil.addEventListener('click', (e) => {
+            modal.style.display = 'none';
+        });
+    </script>
 </body>
 </html> 
