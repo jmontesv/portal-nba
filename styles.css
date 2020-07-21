@@ -3,9 +3,7 @@
 :root {
     --blue: #505cde;
     --orange: #f7a548;
-    --blue-light: #9cf0ff;
     --gray: #d6d6d6;
-    --red: #c93434;
     --dark: #131313;
 }
 * {
@@ -42,13 +40,13 @@ h1 {
     margin: 0 auto;
     background-color: #ffffff;
 }
-header {
-    margin: 0 auto;
+.header {
+    margin: 0 auto;   
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
 .logo {
     cursor: pointer;
@@ -217,8 +215,8 @@ main {
     cursor: pointer;
     position: relative;
     width: 100%;
-    margin-top: 1em;
     overflow: hidden;
+    margin-bottom: 1rem;
 }
 .contenedor-articulos article .cuerpo {
     width: 100%;
@@ -243,19 +241,17 @@ main {
 .contenedor-articulos article p {
     color: #ffffff;
 }
-aside {
-    width: 20%;
+.contenedor-articulos article h5 {
+    text-align: right;
+    color: var(--orange);
+    font-weight: 400;
 }
-.proximos-partidos {
-    border: 1px solid var(--gray);
-}
-.proximos-partidos .cabecera {
+.contenedor-info .cabecera {
     padding: 5px 7px;
-    font-weight: 300;
-    background-color: var(--gray);
+    background: linear-gradient(to right, var(--gray), transparent);
 }
-.proximos-partidos .cuerpo {
-    padding-bottom: .5rem;
+.contenedor-info .cuerpo {
+    padding: 2rem;
 }
 .proximos-partidos article {
     margin: 5px 0;
@@ -264,7 +260,7 @@ aside {
     justify-content: center;
 }
 .proximos-partidos h4 {
-    color: gray;
+    font-weight: 400;
     text-align: center;
     margin-top: -8px;
 }
@@ -286,17 +282,49 @@ aside {
     width: 50px;
     height: 50px;
 }
-.proximos-partidos article .local {
-    
+.jugador-semanal .cont {
+    margin: 0 auto;
+    text-align: center;
 }
-.proximos-partidos article .visitante {
-    
+.jugador-semanal .cont img {
+    width: 100px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-bottom: -6px;
 }
 footer {
-    background-color: var(--orange);
-    height: 20vh;
+    background: var(--blue);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
-footer h5 {
+.sin-fondo {
+    background-color: transparent;
+}
+footer .direccion {
+    margin-right: 1.5rem;
+}
+.mapa-sitio {
+    width: 100%;
+    text-align: center;
+}
+footer .mapa-sitio li {
+    display: inline-block;
+    margin-left: .5rem;
+}
+footer .politicas a {
+    color: var(--orange);
+}
+footer .direccion div {
+    margin-left: -8px;
+}
+footer a {
+    text-decoration: underline; 
+}
+footer h5 { 
     margin: auto;
 }
 @keyframes cambio-color {
@@ -355,6 +383,9 @@ footer h5 {
     }
     main .contenedor-articulos {
         margin-bottom: 1rem;
+    }
+    main .contenedor-articulos article p {
+        display: none;
     }
     main .contenedor-articulos, main aside {
         width: 100%;
